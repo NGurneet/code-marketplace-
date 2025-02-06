@@ -1,27 +1,59 @@
-# vite-template-redux
+# Code Marketplace Frontend Template
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
+## Overview
+React-based frontend template for the Code Marketplace project.
 
-```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
+## Features
+- Responsive design
+- State management
+- Routing configuration
+- Component library integration
+
+## Tech Stack
+- React.js
+- React Router
+- State Management Library
+- Tailwind CSS
+
+## Setup
+
+### Installation
+```bash
+npm install
+npm start
 ```
 
-## Goals
+### Project Structure
+```
+src/
+├── components/
+├── pages/
+├── services/
+├── utils/
+└── App.js
+```
 
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+## Key Components
+- Authentication pages
+- Project listing
+- User dashboard
+- Transaction management
 
-## Scripts
+## Environment Setup
+Create `.env` file with:
+- API endpoints
+- Authentication configurations
 
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
+## Deployment
+- Build: `npm run build`
+- Serve static files
 
-## Inspiration
+## Contributing
+1. Fork repository
+2. Create feature branch
+3. Implement changes
+4. Submit pull request
 
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+## License
+MIT License
+```
