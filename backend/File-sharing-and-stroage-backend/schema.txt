@@ -1,0 +1,60 @@
+Table users {
+  _id ObjectId [pk]
+  name string
+  email string [unique]
+  password string
+  active boolean
+  role enum("USER", "ADMIN") [default: "USER"]
+  profilePicture string
+  refreshToken string
+  forgotPasswordToken string
+  forgotPasswordTokenExpiry datetime
+  createdAt datetime
+  updatedAt datetime
+}
+
+Table projects {
+  _id ObjectId [pk]
+  title string
+  sellerId ObjectId [ref: > users._id]
+  description string
+  zipFile string
+  isVerified enum("pending", "approved", "rejected") [default: "pending"]
+  category string
+  technologies string[]
+  price number
+  averageRating number [default: 0]
+  createdAt datetime
+  updatedAt datetime
+}
+
+Table transactions {
+  _id ObjectId [pk]
+  projectId ObjectId [ref: > projects._id]
+  sellerId ObjectId [ref: > users._id]
+  buyerId ObjectId [ref: > users._id]
+  amount number
+  OwnerCommission number
+  sellerShare number
+  status string [default: "pending"]
+  paymentMethod string
+  createdAt datetime
+  updatedAt datetime
+}
+
+Table transaction_history {
+  _id ObjectId [pk]
+  userId ObjectId [ref: > users._id]
+  balance number
+  type enum("purchase", "sell", "refund", "transfer", "debit", "credit")
+  relatedTransactionId ObjectId [ref: > transactions._id]
+  createdAt datetime
+  updatedAt datetime
+}
+
+Ref: users._id < projects.sellerId
+Ref: users._id < transactions.sellerId
+Ref: users._id < transactions.buyerId
+Ref: projects._id < transactions.projectId
+Ref: users._id < transaction_history.userId
+Ref: transactions._id < transaction_history.relatedTransactionId
