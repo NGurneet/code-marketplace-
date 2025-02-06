@@ -1,136 +1,81 @@
-# File Sharing and Storage Service
+# Code Marketplace 
 
-A backend system built using **Express.js** and **TypeScript** for efficient file sharing, storage, and management.
+## Project Overview
+A full-stack web platform designed for developers to buy, sell, and exchange code projects, snippets, and resources.
 
-✨ **Features**
+## Key Features
+- User authentication and authorization
+- Project listing and marketplace
+- Transaction management
+- Payment integration
+- Project verification system
 
-- 📂 **File Upload and Download Management** - Secure and scalable file handling.
-- 📜 **API Documentation** - Auto-generated API docs using Swagger.
-- 🛠️ **Modular Code Structure** - Organized codebase for easier maintenance and scalability.
-- 🔒 **Secure API Endpoints** - Authentication and role-based access control with JWT.
+## Tech Stack
+- Frontend: React.js
+- Backend: Node.js, Express.js
+- Database: MongoDB
+- Authentication: JWT
+- Payment Gateway: Stripe/PayPal
 
-⚙️ **Prerequisites**
+## Prerequisites
+- Node.js (v18+)
+- MongoDB
+- npm/yarn
 
-- **Node.js** (version 14.x or higher)
-- **npm** or **pnpm** for package management
+## Installation
 
----
-
-## 🚀 Installation
-
-### 1. Clone the Repository
-
+### Clone Repository
 ```bash
-git clone https://github.com/NGurneet/File-Sharing-and-Storage-Service.git
-cd File-Sharing-and-Storage-Service
+git clone https://github.com/NGurneet/code-marketplace-.git
+cd code-marketplace-
 ```
 
-### 2. Install Dependencies
-
-If you're using `npm`:
-
+### Backend Setup
 ```bash
+cd backend
 npm install
+npm start
 ```
 
-Or if you're using `pnpm`:
-
+### Frontend Setup
 ```bash
-pnpm install
+cd frontend
+npm install
+npm start
 ```
 
-### 3. Set Up Environment Variables
+## Environment Variables
+Create `.env` files in backend and frontend with:
+- MongoDB Connection String
+- JWT Secret
+- Payment Gateway Credentials
 
-Create your `.env` file by copying the example file:
-
-```bash
-cp env.example.production .env
+## Project Structure
+```
+code-marketplace/
+├── backend/
+│   ├── models/
+│   ├── controllers/
+│   ├── routes/
+│   └── middleware/
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   └── services/
+└── README.md
 ```
 
-Update the `.env` file with your respective configurations (e.g., database URLs, JWT secret, etc.).
+## Contributing
+1. Fork repository
+2. Create feature branch
+3. Commit changes
+4. Push to branch
+5. Create pull request
 
-### 4. Run the Development Server
+## License
+MIT License
 
-Start the development server with the following command:
-
-```bash
-npm run dev
+## Contact
+Gurneet Singh - [Your Email/LinkedIn]
 ```
-
-This will launch the server in development mode.
-
----
-
-## 🗂️ Project Structure
-
-The project is organized into the following folders for clarity and modularity:
-
-```
-app/
-    common/         # Shared utilities and constants
-    controllers/    # Handles API logic
-    file/           # File handling services (upload, download, etc.)
-    swagger/        # Swagger API documentation setup
-    user/           # User management (authentication, roles, etc.)
-    routes.ts       # Centralized API route definitions
-config/             # Application configuration files (e.g., database, app settings)
-uploads/            # Folder where files are uploaded
-Dockerfile          # Docker configuration for containerizing the app
-docker-compose.yml  # Docker Compose setup for running the app with all dependencies
-env.example.production # Example environment configuration for production
-index.ts            # Main entry point for the application
-nodemon.json        # Nodemon configuration for hot-reloading
-package.json        # Project metadata and scripts
-pnpm-lock.yaml      # Dependency lock file (for pnpm users)
-tsconfig.json       # TypeScript configuration
-```
-
----
-
-## 🛠️ Scripts
-
-### Available scripts for development and production environments:
-
-- `npm run dev` - Runs the server in development mode (with live reloading using Nodemon).
-- `npm run build` - Compiles the TypeScript files to JavaScript for production.
-- `npm run start` - Starts the server (in production or after building).
-- `docker-compose up` - Builds and starts the app with all dependencies in Docker (requires Docker and Docker Compose installed).
-
----
-
-## 📖 API Documentation
-
-You can find the **Swagger-generated API documentation** once the server is running at the following endpoint:
-
-```
-[BASE_URL]/api-docs
-```
-
-This provides detailed descriptions of all the available API endpoints, input/output formats, and authentication requirements.
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! To contribute:
-
-1. **Fork the repository** on GitHub.
-2. **Create a feature branch**:
-   ```bash
-   git checkout -b feature-name
-   ```
-3. **Commit your changes**:
-   ```bash
-   git commit -m "Add feature"
-   ```
-4. **Push your changes** to your branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. **Open a pull request** on GitHub and describe the changes you’ve made.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
